@@ -2,6 +2,7 @@ import { Button } from "../ui/button";
 import { Menu } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { getAssetPath } from "../../utils/assetPath";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -72,7 +73,7 @@ export function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-2">
-            <img src="/logo.png" alt="GrowLeaf Logo" className="h-8 w-8" />
+            <img src={getAssetPath('logo.png')} alt="GrowLeaf Logo" className="h-8 w-8" />
             <span className="text-[24px] font-bold text-[#3b82f6]">GrowLeaf</span>
           </Link>
 

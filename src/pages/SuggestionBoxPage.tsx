@@ -5,6 +5,7 @@ import { Card } from "../components/ui/card";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { createSuggestion, getSuggestions, upvoteSuggestion, removeUpvote, Suggestion } from "../lib/firebaseService";
+import { getAssetPath } from "../utils/assetPath";
 
 export function SuggestionBoxPage() {
   const [name, setName] = useState("");
@@ -110,10 +111,10 @@ export function SuggestionBoxPage() {
       <div className="bg-[#3b82f6] text-white py-16 relative overflow-hidden">
         {/* Dot Patterns */}
         <div className="absolute" style={{ top: '-15%', right: '2%', width: '200px', height: '230px', opacity: 0.12 }}>
-          <img src="/dot.png" alt="" className="w-full h-full object-contain" />
+          <img src={getAssetPath('dot.png')} alt="" className="w-full h-full object-contain" />
         </div>
         <div className="absolute" style={{ bottom: '-20%', left: '5%', width: '180px', height: '210px', opacity: 0.1 }}>
-          <img src="/dot.png" alt="" className="w-full h-full object-contain" />
+          <img src={getAssetPath('dot.png')} alt="" className="w-full h-full object-contain" />
         </div>
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

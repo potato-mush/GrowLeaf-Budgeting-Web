@@ -1,6 +1,7 @@
 import { Button } from "../ui/button";
 import { Download, DollarSign, PiggyBank, CreditCard, TrendingUp, Wallet, Target, Receipt, CircleDollarSign } from "lucide-react";
 import { motion } from "framer-motion";
+import { getAssetPath } from "../../utils/assetPath";
 
 export function HeroSection() {
   // Pop-up icons configuration - all behind phone with original positions
@@ -165,7 +166,7 @@ export function HeroSection() {
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-7 bg-gray-900 rounded-b-3xl z-10"></div>
                   <div className="relative bg-white rounded-[2.5rem] overflow-hidden">
                     <img
-                      src="/market.gif"
+                      src={getAssetPath('market.gif')}
                       alt="GrowLeaf Dashboard"
                       className="w-full h-[580px] object-cover"
                     />
