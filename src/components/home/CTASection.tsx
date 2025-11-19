@@ -1,5 +1,5 @@
 import { Button } from "../ui/button";
-import { PlayCircle, Download } from "lucide-react";
+import { Download } from "lucide-react";
 
 export function CTASection() {
   return (

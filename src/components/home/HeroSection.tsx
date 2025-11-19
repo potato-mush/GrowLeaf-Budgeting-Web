@@ -1,6 +1,5 @@
 import { Button } from "../ui/button";
-import { PlayCircle, Download, DollarSign, PiggyBank, CreditCard, TrendingUp, Wallet, Target, Receipt, CircleDollarSign } from "lucide-react";
-import { ImageWithFallback } from "../shared/ImageWithFallback";
+import { Download, DollarSign, PiggyBank, CreditCard, TrendingUp, Wallet, Target, Receipt, CircleDollarSign } from "lucide-react";
 import { motion } from "framer-motion";
 
 export function HeroSection() {

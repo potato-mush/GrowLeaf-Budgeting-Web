@@ -1,4 +1,4 @@
-import { collection, addDoc, getDocs, query, orderBy, Timestamp, deleteDoc, doc, updateDoc, increment, arrayUnion, arrayRemove, where } from "firebase/firestore";
+import { collection, addDoc, getDocs, query, orderBy, Timestamp, deleteDoc, doc, updateDoc, increment, arrayUnion, arrayRemove } from "firebase/firestore";
 import { db } from "./firebase";
 
 export interface SupportTicket {
