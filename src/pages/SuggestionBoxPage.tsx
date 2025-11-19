@@ -204,4 +204,91 @@ export function SuggestionBoxPage() {
                   </label>
                   <textarea
                     placeholder="Tell us your idea in detail..."
-       
+                    value={suggestion}
+                    onChange={(e) => setSuggestion(e.target.value)}
+                    required
+                    rows={5}
+                    className="w-full px-3 py-2 rounded-md border border-gray-300 bg-white text-[16px] focus:outline-none focus:ring-2 focus:ring-[#3b82f6] resize-none"
+                  />
+                </div>
+
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full h-12 bg-[#3b82f6] hover:bg-[#2563eb] text-white"
+                >
+                  {isSubmitting ? "Submitting..." : "Submit Suggestion"}
+                </Button>
+              </form>
+            </Card>
+          </div>
+
+          {/* Popular Suggestions */}
+          <div>
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-[24px] font-medium text-[#111827]">Community Suggestions</h2>
+              <TrendingUp className="h-6 w-6 text-[#3b82f6]" />
+            </div>
+
+            {loading ? (
+              <div className="text-center py-12">
+                <Loader className="h-8 w-8 animate-spin text-[#3b82f6] mx-auto" />
+              </div>
+            ) : suggestions.length === 0 ? (
+              <Card className="p-8 text-center">
+                <Lightbulb className="h-12 w-12 text-gray-300 mx-auto mb-4" />
+                <p className="text-[16px] text-[#6b7280]">No suggestions yet. Be the first to share your idea!</p>
+              </Card>
+            ) : (
+              <div className="space-y-4 max-h-[600px] overflow-y-auto pr-2">
+                {suggestions.map((sug) => {
+                  const hasUpvoted = sug.upvotedBy?.includes(userEmail);
+                  return (
+                    <Card key={sug.id} className="p-4 hover:shadow-md transition-shadow">
+                      <div className="flex items-start gap-3">
+                        <button
+                          onClick={() => handleUpvote(sug.id!, hasUpvoted)}
+                          className={`flex flex-col items-center gap-1 px-3 py-2 rounded-lg border-2 transition-all ${
+                            hasUpvoted
+                              ? "bg-[#3b82f6] border-[#3b82f6] text-white"
+                              : "bg-white border-gray-200 text-gray-600 hover:border-[#3b82f6] hover:text-[#3b82f6]"
+                          }`}
+                        >
+                          <ThumbsUp className="h-4 w-4" />
+                          <span className="text-[12px] font-medium">{sug.upvotes || 0}</span>
+                        </button>
+
+                        <div className="flex-1">
+                          <div className="flex items-start justify-between mb-2">
+                            <div>
+                              <span className="px-2 py-1 bg-[#3b82f6]/10 text-[#3b82f6] rounded text-[12px] font-medium">
+                                {sug.category}
+                              </span>
+                            </div>
+                            {getStatusBadge(sug.status || "pending")}
+                          </div>
+
+                          <p className="text-[14px] text-[#111827] font-medium mb-2">{sug.suggestion}</p>
+                          <p className="text-[12px] text-[#6b7280]">
+                            by {sug.name} • {sug.createdAt?.toDate?.()?.toLocaleDateString() || "Recently"}
+                          </p>
+
+                          {sug.adminNotes && (
+                            <div className="mt-3 p-3 bg-[#f9fafb] rounded-lg border border-gray-200">
+                              <p className="text-[12px] font-medium text-[#111827] mb-1">Admin Note:</p>
+                              <p className="text-[12px] text-[#6b7280]">{sug.adminNotes}</p>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </Card>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
