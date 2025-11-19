@@ -57,19 +57,19 @@ export function PrivacyPolicyPage() {
       <div className="bg-[#3b82f6] text-white py-16 relative overflow-hidden">
         {/* Scattered Dot Patterns - 5 fully framed patterns, positioned to avoid collision */}
         <div className="absolute" style={{ top: '-15%', right: '2%', width: '200px', height: '230px', opacity: 0.12 }}>
-          <img src="/src/assets/dot.png" alt="" className="w-full h-full object-contain" />
+          <img src="/dot.png" alt="" className="w-full h-full object-contain" />
         </div>
         <div className="absolute" style={{ bottom: '-20%', left: '5%', width: '180px', height: '210px', opacity: 0.1 }}>
-          <img src="/src/assets/dot.png" alt="" className="w-full h-full object-contain" />
+          <img src="/dot.png" alt="" className="w-full h-full object-contain" />
         </div>
         <div className="absolute" style={{ top: '8%', left: '38%', width: '160px', height: '190px', opacity: 0.08 }}>
-          <img src="/src/assets/dot.png" alt="" className="w-full h-full object-contain" />
+          <img src="/dot.png" alt="" className="w-full h-full object-contain" />
         </div>
         <div className="absolute" style={{ bottom: '5%', right: '42%', width: '190px', height: '220px', opacity: 0.09 }}>
-          <img src="/src/assets/dot.png" alt="" className="w-full h-full object-contain" />
+          <img src="/dot.png" alt="" className="w-full h-full object-contain" />
         </div>
         <div className="absolute" style={{ top: '45%', left: '72%', width: '170px', height: '200px', opacity: 0.11 }}>
-          <img src="/src/assets/dot.png" alt="" className="w-full h-full object-contain" />
+          <img src="/dot.png" alt="" className="w-full h-full object-contain" />
         </div>
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
