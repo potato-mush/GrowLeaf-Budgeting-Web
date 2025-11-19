@@ -22,12 +22,6 @@ jobs:
     - name: Build
       run: npm run build
       
-    - name: Copy public assets to dist
-      run: |
-        if [ -d "public" ]; then
-          cp -r public/* dist/ || true
-        fi
-      
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
